@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    button.mbtn{
+      border-radius: 30px;
+    }
+    input.minput{
+      border-radius: 30px;
+    }
+    .bottom-three {
+     margin-top: 35px;
+    }
+    </style>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Home Page</title>
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a href="#" onclick="jobs.html" >
+      <img class="navbar-brand" src="locojobslogo.png" alt="logo"/>
+    </a>
+    <button class="navbar-toggler" type="button mbtn" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 minput" size=50 type="text" placeholder="SEARCH YOUR PROFESSION">
+        <button class="btn btn-secondary my-2 my-sm-0 mbtn" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+<h1 style=font-size:100px class="bottom-three" align="center">mission statement:</h1>
+<p class="bottom-three" align="center">
+  Through the COVID-19 pandemic, we created LocoJobs to support
+  people who are unemployed by supplying them with safe remote jobs
+  to apply for.
+</p>
+<p align="center">
+  Our goal is to help people hoping to find employment
+  during these trying times easily find remote jobs in the US.
+</p>
+<div>
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len)%}
+    <div style="border-style: dashed">
+      <h1>{{jobs[i]["title"]}}</h1>
+      <h2>{{jobs[i]["company"]}}</h2>
+      <h2>Requirements</h2>
+      <p>{{jobs[i]["description"]}}</p>
+      <a href="{{jobs[i]["url"]}}">{{jobs[i]["url"]}}</a>
+    </div>
+{%endfor%}
+</div>
+      <div style="margin-left:280px; margin-bottom:20px; margin-top:45px">
+        <a href="jobs?type=it">
+        <button type="button" class="btn btn-primary btn-lg mbtn">62.7K OPEN JOBS IN TECH</button>
+      </a>
+      <a href="jobs?type=as">
+        <button type="button" class="btn btn-primary btn-lg mbtn">53.1K OPEN JOBS IN ACADEMIC SERVICE</button>
+      </a>
+        <a href="jobs?type=cs">
+        <button type="button" class="btn btn-primary btn-lg mbtn">37.8K OPEN JOBS IN CUSTOMER SERVICE</button>
+      </a>
+      </div>
+      <div style="margin-left:430px">
+        <a href="jobs?type=con">
+        <button type="button" class="btn btn-primary btn-lg mbtn">13.4K OPEN JOBS IN CONSULTING</button>
+      </a>
+        <a href="jobs?type=ss">
+        <button type="button" class="btn btn-primary btn-lg mbtn">20.1K OPEN JOBS IN SOCIAL SERVICES</button>
+      </a>
+      </div>
+    </body>
+</html>
